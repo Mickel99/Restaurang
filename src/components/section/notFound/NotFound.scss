@@ -1,0 +1,36 @@
+$regular: 'Montserrat', Arial, sans-serif;
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+.error {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  background-size: cover;
+
+  &__container {
+    background-color: rgba(180, 222, 255, 0.849);
+    position: absolute;
+    padding: 4em 6em;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    @include desktop {
+      padding: 6em 8em;
+    }
+
+    &__message {
+      font-size: 2em;
+      font-family: $regular;
+      color: rgb(28, 28, 57);
+      margin-bottom: 2em;
+    }
+  }
+}

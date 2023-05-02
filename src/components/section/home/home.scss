@@ -1,0 +1,46 @@
+
+$regular: 'Open Sans', Arial, sans-serif;
+$olive: #216869;
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+.home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 22px;
+  width: 100%;
+  background-image: url("https://cdn-rdb.arla.com/Files/arla-se/99915790/066e6057-783e-47cb-812f-56a92cfbfca1.jpg?crop=(0,59,0,-89)&w=1269&h=715&mode=crop&ak=f525e733&hm=dcc4fafd");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__container {
+    &__header {
+      font-size: 5rem;
+      color: white;
+      text-shadow: 2px 2px #333;
+    }
+
+    &__info {
+      font-family: $regular;
+      color: $olive;
+    }
+  }
+
+  &__presentationContainer {
+    @include tablet {
+      margin-left: 20%;
+      margin-right: 20%;
+    }
+    &__info {
+      font-family: $regular;
+      font-size: 0.8em;
+    }
+  }
+}

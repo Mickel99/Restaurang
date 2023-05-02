@@ -1,0 +1,49 @@
+// Define your custom variables and mixins here
+$title: 'Roboto', sans-serif;
+$regular: 'Open Sans', Arial, sans-serif;
+$regularsize: 16px;
+$container-width-lg: 80%;
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+.nav {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background: #e5eaf5;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: $container-width-lg;
+    margin-inline: auto;
+    max-width: 1920px;
+
+    &__logo {
+      color: #4037a4;
+      font-family: $title;
+      font-size: 1rem;
+    }
+
+    &__menu {
+      display: none;
+
+      @include tablet {
+        display: flex;
+        gap: 3.5rem;
+      }
+
+      &__links {
+        font-size: $regularsize;
+        font-family: $regular;
+        color: #4037a4;
+      }
+    }
+  }
+}

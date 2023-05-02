@@ -1,0 +1,54 @@
+// Define your custom variables and mixins here
+$olivetrans: rgba(33, 104, 105, 0.4);
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+.floating__nav {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 3rem;
+  left: 50%;
+  font-size: 2rem;
+  transform: translateX(-50%);
+  z-index: 9;
+  animation: animateFloatingNav 300ms ease forwards;
+
+  @include tablet {
+    display: none;
+  }
+
+  @keyframes animateFloatingNav {
+    from {
+      opacity: 0;
+      bottom: -5rem;
+    }
+    to {
+      opacity: 1;
+      bottom: 3rem;
+    }
+  }
+
+  .scrollspy {
+    display: flex;
+    gap: 1rem;
+    background: $olivetrans;
+    padding: 0.8rem 1.5rem;
+    border-radius: 3rem;
+    backdrop-filter: blur(20px);
+  }
+
+  &__links {
+    padding: 0.6rem;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    color: white;
+    display: grid;
+  }
+}
+
+
